@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== ROOT ===== */
+
+:root {
+  --primary: #047857;
+  --primary-light: #10b981;
+  --bg: #f5f7fb;
+  --card: rgba(255, 255, 255, 0.7);
+  --border: rgba(255, 255, 255, 0.3);
+  --text: #111827;
+  --muted: #6b7280;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(
+    135deg,
+    #ecfdf5 0%,
+    #f0fdf4 30%,
+    #ffffff 100%
+  );
+  min-height: 100vh;
+  color: var(--text);
+}
+
+/* ===== TYPOGRAPHY ===== */
+
+.font-display {
+  font-family: 'Cinzel', serif;
+}
+
+.section-title {
+  font-family: 'Cinzel', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: #064e3b;
+  letter-spacing: 1px;
+}
+
+/* ===== CARDS ===== */
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow:
+    0 10px 25px rgba(0,0,0,0.05),
+    inset 0 1px 1px rgba(255,255,255,0.4);
+}
+
+/* ===== INPUTS ===== */
+
+.input-field {
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 16px;
+  border: 1px solid #d1d5db;
+  background: rgba(255,255,255,0.85);
+  font-size: 15px;
+  transition: all 0.25s ease;
+  outline: none;
+}
+
+.input-field:focus {
+  border-color: var(--primary-light);
+  box-shadow:
+    0 0 0 4px rgba(16,185,129,0.12);
+  transform: translateY(-1px);
+}
+
+/* ===== BUTTONS ===== */
+
+.btn-primary {
+  background: linear-gradient(
+    135deg,
+    #059669,
+    #10b981
+  );
+  color: white;
+  border: none;
+  padding: 14px 22px;
+  border-radius: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow:
+    0 10px 20px rgba(16,185,129,0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.01);
+  box-shadow:
+    0 16px 28px rgba(16,185,129,0.35);
+}
+
+.btn-secondary {
+  background: white;
+  color: #111827;
+  border: 1px solid #d1d5db;
+  padding: 14px 22px;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.btn-secondary:hover {
+  background: #f9fafb;
+}
+
+/* ===== TABLE ===== */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  text-align: left;
+  padding: 18px;
+  background: #ecfdf5;
+  color: #065f46;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+td {
+  padding: 18px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tr {
+  transition: all 0.2s ease;
+}
+
+tr:hover {
+  background: rgba(16,185,129,0.05);
+}
+
+/* ===== LINKS ===== */
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== CERTIFICATE ===== */
+
+#certificate-preview {
+  background: #fffef7;
+  border: 16px solid #065f46;
+  border-radius: 20px;
+  padding: 60px;
+  min-height: 700px;
+  position: relative;
+  overflow: hidden;
+  box-shadow:
+    0 20px 40px rgba(0,0,0,0.08);
+}
+
+#certificate-preview::before {
+  content: "अ";
+  position: absolute;
+  left: 40px;
+  top: 140px;
+  font-size: 180px;
+  color: rgba(6,95,70,0.04);
+  font-family: serif;
+}
+
+/* ===== ANIMATIONS ===== */
+
+.animate-slide-up {
+  animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #10b981;
+  border-radius: 20px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  #certificate-preview {
+    padding: 25px;
+    min-height: auto;
+  }
+
+  th,
+  td {
+    padding: 12px;
+    font-size: 14px;
+  }
+}
