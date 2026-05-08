@@ -14,10 +14,15 @@ dotenv.config();
 const app = express();
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
-app.use(cors({
-  origin: process.env.FRONTEND_URL || '*',
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [
+      "https://certificate-generator-drab-ten.vercel.app",
+      "https://certificate-generator-esoeaw35o-tejaakashmalla-cmyks-projects.vercel.app",
+    ],
+    credentials: true,
+  })
+);
 app.use(express.json());
 
 // ─── Routes ───────────────────────────────────────────────────────────────────
